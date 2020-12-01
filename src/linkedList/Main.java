@@ -142,7 +142,8 @@ class LinkedList {
             last.setNext(new_node);
         }
     }
-
+//TODO:  добавить метод для удаления по умолчанию
+// TODO: добавить метод для удаления последнего элемента
     public boolean remove(int index) {
         Node current = this.head;
         if (this.head != null) {
