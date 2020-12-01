@@ -14,9 +14,9 @@ public class Main {
         // создаем список на основе ранее созданого элемента списка
         LinkedList list4 = new LinkedList(list3);
         // Print the LinkedList
-        list3.insert(new int[]{34, 34, 45, 56, 67, 78}, 2);
-        list3.insert(list2);
-        list3.insert(list2, 2);
+        list3.insert(new int[]{34, 34, 45, 56, 67, 78}, 7);
+//        list3.insert(list2);
+//        list3.insert(list2, 2);
 
         list3.remove(4);
 
@@ -152,6 +152,24 @@ class LinkedList {
                 current = current.getNext();
             }
             current.setNext(current.getNext().getNext());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean remove(int index, int[] list) {
+        Node current = this.head;
+        Node temp = this.head;
+        if (this.head != null) {
+            for (int i = 0; i < index; i++) {
+                if (current.getNext() == null)
+                    return false;
+                current = current.getNext();
+            }
+            for(int i =0; i<index +list.length;i++){
+                temp = temp.getNext();
+            }
+            current.setNext(temp.getNext());
             return true;
         }
         return false;
